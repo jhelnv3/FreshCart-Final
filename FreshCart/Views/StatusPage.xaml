@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FreshCart.ViewModels"
+             xmlns:models="clr-namespace:FreshCart.Models"
+             x:Class="FreshCart.Views.StatusPage"
+             Title="Order Status"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.BindingContext>
+        <viewmodels:StatusViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto,*" BackgroundColor="#F5F5F5">
+
+        <!-- Header -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Padding="15" BackgroundColor="White">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Order Status" 
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       TextColor="#333333"/>
+                <Label Text="{Binding Orders.Count, StringFormat='Total Orders: {0}'}" 
+                       FontSize="13"
+                       TextColor="#666666"/>
+            </VerticalStackLayout>
+            <Button Grid.Column="1" 
+                    Text="🚪" 
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#F44336"
+                    TextColor="White"
+                    CornerRadius="18"
+                    HeightRequest="36"
+                    WidthRequest="50"
+                    FontSize="16"
+                    Padding="0"
+                    VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Orders List -->
+        <CollectionView Grid.Row="1" 
+                       ItemsSource="{Binding Orders}" 
+                       SelectionMode="None"
+                       Margin="5,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Order">
+                    <Frame Margin="8,4" 
+                           Padding="12" 
+                           CornerRadius="10" 
+                           HasShadow="True" 
+                           BackgroundColor="White">
+                        <VerticalStackLayout Spacing="8">
+
+                            <!-- Order Header -->
+                            <Grid ColumnDefinitions="*,Auto">
+                                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                    <Label Text="{Binding OrderNumber, StringFormat='📦 {0}'}" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"
+                                           TextColor="#333333"/>
+                                    <Label Text="{Binding OrderDate, StringFormat='📅 {0:MMM dd, yyyy hh:mm tt}'}" 
+                                           FontSize="11" 
+                                           TextColor="#666666"/>
+                                    <Label Text="{Binding ReceivedDate, StringFormat='✅ Received: {0:MMM dd, yyyy hh:mm tt}'}" 
+                                           FontSize="11" 
+                                           TextColor="#009688"
+                                           IsVisible="{Binding ReceivedDate, Converter={StaticResource IsNotNullConverter}}"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1" HorizontalOptions="End" Spacing="3">
+                                    <Label Text="{Binding TotalAmount, StringFormat='₱{0:F2}'}" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"
+                                           TextColor="#4CAF50"
+                                           HorizontalTextAlignment="End"/>
+                                    <Frame CornerRadius="12" 
+                                           Padding="8,4"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusToColorConverter}}"
+                                           HasShadow="False"
+                                           HorizontalOptions="End">
+                                        <Label Text="{Binding Status}" 
+                                               TextColor="White" 
+                                               FontAttributes="Bold"
+                                               FontSize="11"/>
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <!-- Payment Method -->
+                            <HorizontalStackLayout Spacing="8">
+                                <Label Text="💳" FontSize="13"/>
+                                <Label Text="{Binding PaymentMethod, StringFormat='Payment Method: {0}'}" 
+                                       FontSize="12"
+                                       TextColor="#666666"/>
+                            </HorizontalStackLayout>
+
+                            <!-- Status Progress Bar -->
+                            <Grid ColumnDefinitions="*,*,*,*,*" 
+                                  ColumnSpacing="2" 
+                                  Margin="0,5">
+                                <VerticalStackLayout Grid.Column="0" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="3">
+                                    <Frame WidthRequest="22" 
+                                           HeightRequest="22" 
+                                           CornerRadius="11" 
+                                           Padding="0" 
+                                           HasShadow="False"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusStepConverter}, ConverterParameter=Pending}">
+                                        <Label Text="1" 
+                                               TextColor="White" 
+                                               FontSize="9" 
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="Pending" 
+                                           FontSize="7" 
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#999999"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="3">
+                                    <Frame WidthRequest="22" 
+                                           HeightRequest="22" 
+                                           CornerRadius="11" 
+                                           Padding="0" 
+                                           HasShadow="False"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusStepConverter}, ConverterParameter=Packing}">
+                                        <Label Text="2" 
+                                               TextColor="White" 
+                                               FontSize="9" 
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="Packing" 
+                                           FontSize="7" 
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#999999"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="3">
+                                    <Frame WidthRequest="22" 
+                                           HeightRequest="22" 
+                                           CornerRadius="11" 
+                                           Padding="0" 
+                                           HasShadow="False"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusStepConverter}, ConverterParameter=ToDeliver}">
+                                        <Label Text="3" 
+                                               TextColor="White" 
+                                               FontSize="9" 
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="Delivery" 
+                                           FontSize="7" 
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#999999"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="3" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="3">
+                                    <Frame WidthRequest="22" 
+                                           HeightRequest="22" 
+                                           CornerRadius="11" 
+                                           Padding="0" 
+                                           HasShadow="False"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusStepConverter}, ConverterParameter=ToReceive}">
+                                        <Label Text="4" 
+                                               TextColor="White" 
+                                               FontSize="9" 
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="Receive" 
+                                           FontSize="7" 
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#999999"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="4" 
+                                                   HorizontalOptions="Center" 
+                                                   Spacing="3">
+                                    <Frame WidthRequest="22" 
+                                           HeightRequest="22" 
+                                           CornerRadius="11" 
+                                           Padding="0" 
+                                           HasShadow="False"
+                                           BackgroundColor="{Binding Status, Converter={StaticResource StatusStepConverter}, ConverterParameter=Received}">
+                                        <Label Text="✓" 
+                                               TextColor="White" 
+                                               FontSize="9" 
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="Done" 
+                                           FontSize="7" 
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#999999"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <!-- Divider -->
+                            <BoxView HeightRequest="1" Color="#E0E0E0"/>
+
+                            <!-- Items in Order -->
+                            <Label Text="📋 Items in this order:" 
+                                   FontSize="13" 
+                                   FontAttributes="Bold"
+                                   TextColor="#333333"/>
+
+                            <Frame BackgroundColor="#F8F9FA" 
+                                   CornerRadius="8" 
+                                   Padding="8" 
+                                   HasShadow="False">
+                                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Items}" 
+                                                   Spacing="5">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="models:CartItem">
+                                            <Grid ColumnDefinitions="Auto,*,Auto,Auto" 
+                                                  ColumnSpacing="8">
+                                                <Label Grid.Column="0" 
+                                                       Text="•" 
+                                                       FontSize="14"
+                                                       VerticalOptions="Center"
+                                                       TextColor="#666666"/>
+                                                <Label Grid.Column="1" 
+                                                       Text="{Binding Product.Name}" 
+                                                       FontSize="13"
+                                                       VerticalOptions="Center"
+                                                       TextColor="#333333"/>
+                                                <Frame Grid.Column="2" 
+                                                       BackgroundColor="#E3F2FD" 
+                                                       CornerRadius="3" 
+                                                       Padding="5,2"
+                                                       HasShadow="False">
+                                                    <Label Text="{Binding Quantity, StringFormat='x{0}'}" 
+                                                           FontSize="11"
+                                                           TextColor="#1976D2"
+                                                           FontAttributes="Bold"/>
+                                                </Frame>
+                                                <Label Grid.Column="3" 
+                                                       Text="{Binding TotalPrice, StringFormat='₱{0:F2}'}" 
+                                                       FontSize="13"
+                                                       TextColor="#4CAF50"
+                                                       FontAttributes="Bold"
+                                                       VerticalOptions="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <!-- Order Summary -->
+                            <Grid ColumnDefinitions="*,Auto" Padding="5,0">
+                                <Label Grid.Column="0" 
+                                       Text="{Binding Items.Count, StringFormat='Total Items: {0}'}" 
+                                       FontSize="11"
+                                       TextColor="#666666"/>
+                                <Label Grid.Column="1" 
+                                       Text="{Binding TotalAmount, StringFormat='Order Total: ₱{0:F2}'}" 
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       TextColor="#4CAF50"/>
+                            </Grid>
+
+                            <!-- Confirm Receipt Button - Only visible when Delivered -->
+                            <Button Text="✅ Confirm Receipt" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:StatusViewModel}}, Path=ConfirmReceiptCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#009688"
+                                    TextColor="White"
+                                    CornerRadius="8"
+                                    HeightRequest="40"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    IsVisible="{Binding Status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=Delivered}"/>
+
+                            <!-- Received Confirmation Message -->
+                            <Frame BackgroundColor="#E0F2F1" 
+                                   CornerRadius="8" 
+                                   Padding="12" 
+                                   HasShadow="False"
+                                   IsVisible="{Binding Status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=Received}">
+                                <HorizontalStackLayout Spacing="8">
+                                    <Label Text="✅" FontSize="18" VerticalOptions="Center"/>
+                                    <VerticalStackLayout Spacing="2">
+                                        <Label Text="Order Received!" 
+                                               FontSize="15" 
+                                               FontAttributes="Bold" 
+                                               TextColor="#009688"/>
+                                        <Label Text="{Binding ReceivedDate, StringFormat='Confirmed on: {0:MMM dd, yyyy hh:mm tt}'}" 
+                                               FontSize="11" 
+                                               TextColor="#666666"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" 
+                                   HorizontalOptions="Center" 
+                                   Padding="20">
+                    <Label Text="📭" 
+                           FontSize="50" 
+                           HorizontalOptions="Center"/>
+                    <Label Text="No orders yet" 
+                           FontSize="16" 
+                           TextColor="#999999"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Your order status will appear here" 
+                           FontSize="13" 
+                           TextColor="#BBBBBB"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

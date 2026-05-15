@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FreshCart.ViewModels"
+             x:Class="FreshCart.Views.CartPage"
+             Title="Shopping Cart"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CartViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0" BackgroundColor="#F5F5F5">
+
+        <!-- Header -->
+        <Grid Grid.Row="0" 
+              ColumnDefinitions="*,Auto" 
+              Padding="15,10" 
+              BackgroundColor="White">
+            <Label Grid.Column="0" 
+                   Text="🛒 Shopping Cart" 
+                   FontSize="20" 
+                   FontAttributes="Bold"
+                   TextColor="#333333"
+                   VerticalOptions="Center"/>
+            <Button Grid.Column="1" 
+                    Text="🚪" 
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#F44336"
+                    TextColor="White"
+                    CornerRadius="18"
+                    HeightRequest="36"
+                    WidthRequest="50"
+                    FontSize="16"
+                    Padding="0"/>
+        </Grid>
+
+        <!-- Cart Items -->
+        <CollectionView Grid.Row="1" 
+                       ItemsSource="{Binding CartItems}"
+                       SelectionMode="None"
+                       Margin="5,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="8,4" 
+                           Padding="12" 
+                           CornerRadius="10" 
+                           HasShadow="True" 
+                           BackgroundColor="White">
+                        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                            <VerticalStackLayout Grid.Column="0" Spacing="3">
+                                <Label Text="{Binding Product.Name}" 
+                                       FontSize="15" 
+                                       FontAttributes="Bold"
+                                       TextColor="#333333"/>
+                                <Label Text="{Binding Product.Price, StringFormat='₱{0:F2} each'}" 
+                                       FontSize="12" 
+                                       TextColor="#666666"/>
+                                <Label Text="{Binding TotalPrice, StringFormat='Total: ₱{0:F2}'}" 
+                                       FontSize="15" 
+                                       TextColor="#4CAF50"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+
+                            <!-- Quantity Badge -->
+                            <Frame Grid.Column="1" 
+                                   BackgroundColor="#E3F2FD" 
+                                   CornerRadius="8" 
+                                   Padding="10,5"
+                                   HasShadow="False"
+                                   VerticalOptions="Center">
+                                <Label Text="{Binding Quantity, StringFormat='x{0}'}" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#1976D2"
+                                       HorizontalTextAlignment="Center"/>
+                            </Frame>
+
+                            <!-- Remove Button -->
+                            <Button Grid.Column="2" 
+                                    Text="🗑️" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CartViewModel}}, Path=RemoveItemCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#F44336"
+                                    TextColor="White"
+                                    CornerRadius="18"
+                                    HeightRequest="36"
+                                    WidthRequest="36"
+                                    Padding="0"
+                                    FontSize="16"
+                                    VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" 
+                                   HorizontalOptions="Center" 
+                                   Padding="20">
+                    <Label Text="🛒" 
+                           FontSize="50" 
+                           HorizontalOptions="Center"/>
+                    <Label Text="Your cart is empty" 
+                           FontSize="18" 
+                           TextColor="#999999"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Add products from the shop to get started!" 
+                           FontSize="13" 
+                           TextColor="#BBBBBB"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+        <!-- Total and Purchase Section -->
+        <Frame Grid.Row="2" 
+               Margin="10,5" 
+               Padding="15" 
+               CornerRadius="10" 
+               HasShadow="True" 
+               BackgroundColor="White">
+            <Grid ColumnDefinitions="*,Auto" 
+                  RowDefinitions="Auto,Auto" 
+                  RowSpacing="10">
+
+                <!-- Total Amount -->
+                <Label Grid.Row="0" Grid.Column="0" 
+                       Text="Total Amount:" 
+                       FontSize="18" 
+                       FontAttributes="Bold"
+                       TextColor="#333333"/>
+                <Label Grid.Row="0" Grid.Column="1" 
+                       Text="{Binding TotalAmount, StringFormat='₱{0:F2}'}" 
+                       FontSize="18" 
+                       FontAttributes="Bold"
+                       TextColor="#4CAF50"/>
+
+                <!-- Purchase Button -->
+                <Button Grid.Row="1" Grid.ColumnSpan="2" 
+                        Text="Proceed to Purchase" 
+                        Command="{Binding PurchaseCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        FontSize="16"
+                        HeightRequest="45"
+                        CornerRadius="22"/>
+            </Grid>
+        </Frame>
+
+    </Grid>
+</ContentPage>

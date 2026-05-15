@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FreshCart.ViewModels"
+             x:Class="FreshCart.Views.LoginPage"
+             Title="FreshCart Login"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.BindingContext>
+        <viewmodels:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <ScrollView.Content>
+            <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+                <!-- App Logo and Title -->
+                <Label Text="🛒 FreshCart" 
+                       FontSize="36" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center"
+                       TextColor="#2E7D32"/>
+
+                <Label Text="E-Grocery System" 
+                       FontSize="18" 
+                       HorizontalOptions="Center"
+                       TextColor="#666666"
+                       Margin="0,0,0,30"/>
+
+                <!-- Login Form -->
+                <Frame BackgroundColor="White" 
+                       CornerRadius="10" 
+                       Padding="20" 
+                       HasShadow="True">
+                    <Frame.Content>
+                        <VerticalStackLayout Spacing="15">
+
+                            <Label Text="Username" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#333333"/>
+                            <Entry Text="{Binding Username}" 
+                                   Placeholder="Enter username (user/staff)"
+                                   ClearButtonVisibility="WhileEditing"
+                                   TextColor="#333333"
+                                   PlaceholderColor="#999999"/>
+
+                            <Label Text="Password" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#333333"/>
+                            <Entry Text="{Binding Password}" 
+                                   Placeholder="Enter password"
+                                   IsPassword="True"
+                                   ClearButtonVisibility="WhileEditing"
+                                   TextColor="#333333"
+                                   PlaceholderColor="#999999"/>
+
+                            <!-- Error Message -->
+                            <Label Text="{Binding ErrorMessage}" 
+                                   TextColor="Red" 
+                                   IsVisible="{Binding ErrorMessage, Converter={StaticResource StringToBoolConverter}}"
+                                   HorizontalOptions="Center"/>
+
+                            <!-- Login Button -->
+                            <Button Text="Login" 
+                                    Command="{Binding LoginCommand}"
+                                    BackgroundColor="#4CAF50"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    HeightRequest="50"
+                                    CornerRadius="25"/>
+                        </VerticalStackLayout>
+                    </Frame.Content>
+                </Frame>
+
+                <!-- Demo Credentials Info -->
+                <Label Text="Demo Credentials:" 
+                       FontSize="14" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       TextColor="#333333"/>
+                <Label Text="User: user / user123" 
+                       FontSize="14" 
+                       HorizontalOptions="Center"
+                       TextColor="#666666"/>
+                <Label Text="Staff: staff / staff123" 
+                       FontSize="14" 
+                       HorizontalOptions="Center"
+                       TextColor="#666666"/>
+
+            </VerticalStackLayout>
+        </ScrollView.Content>
+    </ScrollView>
+</ContentPage>
