@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace FreshCart.Models
@@ -28,6 +22,7 @@ namespace FreshCart.Models
                     OnPropertyChanged(nameof(StockQuantity));
                     OnPropertyChanged(nameof(Id));
                     OnPropertyChanged(nameof(IsInStock));
+                    OnPropertyChanged(nameof(Category));
                 }
             }
         }
@@ -50,6 +45,7 @@ namespace FreshCart.Models
         public int StockQuantity => Product?.StockQuantity ?? 0;
         public int Id => Product?.Id ?? 0;
         public bool IsInStock => Product?.StockQuantity > 0;
+        public string Category => Product?.Category ?? "N/A";
 
         public event PropertyChangedEventHandler PropertyChanged;
 

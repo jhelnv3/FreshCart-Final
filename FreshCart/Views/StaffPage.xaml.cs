@@ -16,75 +16,78 @@ public partial class StaffPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        // Refresh data when page appears
-        RefreshOrdersDisplay();
+        RefreshData();
     }
 
-    private void RefreshOrdersDisplay()
+    private void RefreshData()
     {
-        // Force UI refresh for orders
-        if (_viewModel != null)
-        {
-            var ordersProperty = _viewModel.GetType().GetProperty("Orders");
-            if (ordersProperty != null)
-            {
-                _viewModel.GetType().GetMethod("OnPropertyChanged")?.Invoke(_viewModel, new[] { "Orders" });
-            }
-        }
+        // Refresh the viewmodel data
+        _viewModel.RefreshOrders();
+    }
+
+    private void HideAllContent()
+    {
+        OrdersContent.IsVisible = false;
+        AddProductContent.IsVisible = false;
+        UpdateContent.IsVisible = false;
+        CategoryContent.IsVisible = false;
+        SummaryContent.IsVisible = false;
+    }
+
+    private void ResetTabColors()
+    {
+        OrdersTab.BackgroundColor = Color.FromArgb("#757575");
+        AddProductTab.BackgroundColor = Color.FromArgb("#757575");
+        UpdateTab.BackgroundColor = Color.FromArgb("#757575");
+        CategoryTab.BackgroundColor = Color.FromArgb("#757575");
+        SummaryTab.BackgroundColor = Color.FromArgb("#757575");
     }
 
     private void OnOrdersTabClicked(object sender, EventArgs e)
     {
+        HideAllContent();
         OrdersContent.IsVisible = true;
-        AddProductContent.IsVisible = false;
-        ProductsContent.IsVisible = false;
-        UpdateContent.IsVisible = false;
-
+        ResetTabColors();
         OrdersTab.BackgroundColor = Color.FromArgb("#2196F3");
-        AddProductTab.BackgroundColor = Color.FromArgb("#757575");
-        ProductsTab.BackgroundColor = Color.FromArgb("#757575");
-        UpdateTab.BackgroundColor = Color.FromArgb("#757575");
-
-        // Refresh orders when switching to Orders tab
-        RefreshOrdersDisplay();
+        _viewModel.RefreshOrders();
     }
 
     private void OnAddProductTabClicked(object sender, EventArgs e)
     {
-        OrdersContent.IsVisible = false;
+        HideAllContent();
         AddProductContent.IsVisible = true;
-        ProductsContent.IsVisible = false;
-        UpdateContent.IsVisible = false;
-
-        OrdersTab.BackgroundColor = Color.FromArgb("#757575");
+        ResetTabColors();
         AddProductTab.BackgroundColor = Color.FromArgb("#2196F3");
-        ProductsTab.BackgroundColor = Color.FromArgb("#757575");
-        UpdateTab.BackgroundColor = Color.FromArgb("#757575");
     }
 
     private void OnProductsTabClicked(object sender, EventArgs e)
     {
-        OrdersContent.IsVisible = false;
-        AddProductContent.IsVisible = false;
-        ProductsContent.IsVisible = true;
-        UpdateContent.IsVisible = false;
-
-        OrdersTab.BackgroundColor = Color.FromArgb("#757575");
-        AddProductTab.BackgroundColor = Color.FromArgb("#757575");
-        ProductsTab.BackgroundColor = Color.FromArgb("#2196F3");
-        UpdateTab.BackgroundColor = Color.FromArgb("#757575");
+        HideAllContent();
+        ResetTabColors();
     }
 
     private void OnUpdateTabClicked(object sender, EventArgs e)
     {
-        OrdersContent.IsVisible = false;
-        AddProductContent.IsVisible = false;
-        ProductsContent.IsVisible = false;
+        HideAllContent();
         UpdateContent.IsVisible = true;
-
-        OrdersTab.BackgroundColor = Color.FromArgb("#757575");
-        AddProductTab.BackgroundColor = Color.FromArgb("#757575");
-        ProductsTab.BackgroundColor = Color.FromArgb("#757575");
+        ResetTabColors();
         UpdateTab.BackgroundColor = Color.FromArgb("#2196F3");
+    }
+
+    private void OnCategoryTabClicked(object sender, EventArgs e)
+    {
+        HideAllContent();
+        CategoryContent.IsVisible = true;
+        ResetTabColors();
+        CategoryTab.BackgroundColor = Color.FromArgb("#2196F3");
+    }
+
+    private void OnSummaryTabClicked(object sender, EventArgs e)
+    {
+        HideAllContent();
+        SummaryContent.IsVisible = true;
+        ResetTabColors();
+        SummaryTab.BackgroundColor = Color.FromArgb("#2196F3");
+        _viewModel.RefreshOrders();
     }
 }

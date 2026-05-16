@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FreshCart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1ea98db50a24b7866c1fe92b323cedf18e53a4f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("FreshCart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FreshCart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

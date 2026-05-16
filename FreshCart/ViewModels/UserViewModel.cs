@@ -9,9 +9,26 @@ namespace FreshCart.ViewModels
     {
         private int _cartItemCount;
         private string _searchQuery;
+        private string _selectedCategory;
         private ObservableCollection<ProductDisplay> _filteredProducts;
 
         public ObservableCollection<ProductDisplay> ProductDisplays { get; set; } = new();
+
+        public string SelectedCategory
+        {
+            get => _selectedCategory;
+            set
+            {
+                _selectedCategory = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(HasActiveFilter));
+                FilterProducts();
+            }
+        }
+
+        public bool HasActiveFilter => !string.IsNullOrWhiteSpace(SelectedCategory) || !string.IsNullOrWhiteSpace(SearchQuery);
+
+        public ObservableCollection<string> Categories => DataService.Categories;
 
         public ObservableCollection<ProductDisplay> FilteredProducts
         {
@@ -39,6 +56,7 @@ namespace FreshCart.ViewModels
             {
                 _searchQuery = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(HasActiveFilter));
                 FilterProducts();
             }
         }
@@ -51,10 +69,16 @@ namespace FreshCart.ViewModels
         public ICommand GoToHistoryCommand { get; }
         public ICommand LogoutCommand { get; }
         public ICommand SearchCommand { get; }
+        public ICommand ClearFilterCommand { get; }
 
         public UserViewModel()
         {
-            LoadProducts();
+            // Initialize commands in the constructor
+            ClearFilterCommand = new Command(() =>
+            {
+                SelectedCategory = null;
+                SearchQuery = string.Empty;
+            });
 
             IncreaseQuantityCommand = new Command<ProductDisplay>(OnIncreaseQuantity);
             DecreaseQuantityCommand = new Command<ProductDisplay>(OnDecreaseQuantity);
@@ -65,6 +89,7 @@ namespace FreshCart.ViewModels
             LogoutCommand = new Command(async () => await OnLogout());
             SearchCommand = new Command(FilterProducts);
 
+            LoadProducts();
             UpdateCartCount();
         }
 
@@ -80,19 +105,23 @@ namespace FreshCart.ViewModels
 
         public void FilterProducts()
         {
-            if (string.IsNullOrWhiteSpace(SearchQuery))
-            {
-                FilteredProducts = new ObservableCollection<ProductDisplay>(ProductDisplays);
-            }
-            else
+            var filtered = ProductDisplays.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(SearchQuery))
             {
                 var searchTerm = SearchQuery.ToLower();
-                var filtered = ProductDisplays.Where(p =>
+                filtered = filtered.Where(p =>
                     p.Name.ToLower().Contains(searchTerm) ||
-                    p.Price.ToString("F2").Contains(searchTerm)
-                ).ToList();
-                FilteredProducts = new ObservableCollection<ProductDisplay>(filtered);
+                    p.Price.ToString("F2").Contains(searchTerm) ||
+                    p.Category.ToLower().Contains(searchTerm));
             }
+
+            if (!string.IsNullOrWhiteSpace(SelectedCategory))
+            {
+                filtered = filtered.Where(p => p.Category == SelectedCategory);
+            }
+
+            FilteredProducts = new ObservableCollection<ProductDisplay>(filtered);
         }
 
         public void RefreshProductStock()
@@ -198,8 +227,6 @@ namespace FreshCart.ViewModels
             productDisplay.SelectedQuantity = 0;
 
             UpdateCartCount();
-
-            // Refresh the filtered list to update stock display
             FilterProducts();
 
             await Application.Current.MainPage.DisplayAlert("Success",

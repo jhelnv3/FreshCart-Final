@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using FreshCart.Models;
+﻿using FreshCart.Models;
 using FreshCart.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -16,11 +10,23 @@ namespace FreshCart.ViewModels
         private string _newProductName;
         private string _newProductPrice;
         private string _newProductStock;
+        private string _newProductCategory;
         private string _searchQuery;
+        private string _selectedCategory;
+        private string _newCategoryName;
         private ObservableCollection<Product> _filteredProducts;
+        private ObservableCollection<string> _categories;
 
         public ObservableCollection<Order> Orders => DataService.Orders;
         public ObservableCollection<Product> Products => DataService.Products;
+
+        public decimal TotalRevenue => Orders.Sum(o => o.TotalAmount);
+
+        public ObservableCollection<string> Categories
+        {
+            get => _categories ?? DataService.Categories;
+            set { _categories = value; OnPropertyChanged(); }
+        }
 
         public ObservableCollection<Product> FilteredProducts
         {
@@ -46,15 +52,28 @@ namespace FreshCart.ViewModels
             set { _newProductStock = value; OnPropertyChanged(); }
         }
 
+        public string NewProductCategory
+        {
+            get => _newProductCategory;
+            set { _newProductCategory = value; OnPropertyChanged(); }
+        }
+
+        public string NewCategoryName
+        {
+            get => _newCategoryName;
+            set { _newCategoryName = value; OnPropertyChanged(); }
+        }
+
         public string SearchQuery
         {
             get => _searchQuery;
-            set
-            {
-                _searchQuery = value;
-                OnPropertyChanged();
-                FilterProducts();
-            }
+            set { _searchQuery = value; OnPropertyChanged(); FilterProducts(); }
+        }
+
+        public string SelectedCategory
+        {
+            get => _selectedCategory;
+            set { _selectedCategory = value; OnPropertyChanged(); FilterProducts(); }
         }
 
         public ICommand UpdateStatusCommand { get; }
@@ -62,6 +81,10 @@ namespace FreshCart.ViewModels
         public ICommand SearchCommand { get; }
         public ICommand SelectProductForUpdateCommand { get; }
         public ICommand DeleteProductCommand { get; }
+        public ICommand ClearFilterCommand { get; }
+        public ICommand AddCategoryCommand { get; }
+        public ICommand EditCategoryCommand { get; }
+        public ICommand DeleteCategoryCommand { get; }
         public ICommand LogoutCommand { get; }
 
         public StaffViewModel()
@@ -71,26 +94,59 @@ namespace FreshCart.ViewModels
             SearchCommand = new Command(FilterProducts);
             SelectProductForUpdateCommand = new Command<Product>(OnSelectProductForUpdate);
             DeleteProductCommand = new Command<Product>(OnDeleteProduct);
+            ClearFilterCommand = new Command(() => { SelectedCategory = null; SearchQuery = string.Empty; });
+            AddCategoryCommand = new Command(OnAddCategory);
+            EditCategoryCommand = new Command<string>(OnEditCategory);
+            DeleteCategoryCommand = new Command<string>(OnDeleteCategory);
             LogoutCommand = new Command(async () => await OnLogout());
 
+            Categories = new ObservableCollection<string>(DataService.Categories);
             FilteredProducts = new ObservableCollection<Product>(Products);
+        }
+
+        public void RefreshOrders()
+        {
+            OnPropertyChanged(nameof(Orders));
+            OnPropertyChanged(nameof(TotalRevenue));
         }
 
         private void FilterProducts()
         {
-            if (string.IsNullOrWhiteSpace(SearchQuery))
-            {
-                FilteredProducts = new ObservableCollection<Product>(Products);
-            }
-            else
+            var filtered = Products.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(SearchQuery))
             {
                 var searchTerm = SearchQuery.ToLower();
-                var filtered = Products.Where(p =>
+                filtered = filtered.Where(p =>
                     p.Name.ToLower().Contains(searchTerm) ||
                     p.Id.ToString().Contains(searchTerm) ||
-                    p.Price.ToString("F2").Contains(searchTerm)
-                ).ToList();
-                FilteredProducts = new ObservableCollection<Product>(filtered);
+                    p.Price.ToString("F2").Contains(searchTerm) ||
+                    p.Category.ToLower().Contains(searchTerm));
+            }
+
+            if (!string.IsNullOrWhiteSpace(SelectedCategory))
+            {
+                filtered = filtered.Where(p => p.Category == SelectedCategory);
+            }
+
+            FilteredProducts = new ObservableCollection<Product>(filtered);
+        }
+
+        private async void OnDeleteProduct(Product product)
+        {
+            bool confirm = await Application.Current.MainPage.DisplayAlert(
+                "Delete Product",
+                $"Are you sure you want to delete '{product.Name}'?\nThis action cannot be undone.",
+                "Delete",
+                "Cancel");
+
+            if (confirm)
+            {
+                DataService.Products.Remove(product);
+                FilterProducts();
+                OnPropertyChanged(nameof(Products));
+                await Application.Current.MainPage.DisplayAlert("Deleted",
+                    $"{product.Name} has been deleted", "OK");
             }
         }
 
@@ -103,6 +159,7 @@ namespace FreshCart.ViewModels
                 "Edit Name",
                 "Edit Price",
                 "Edit Stock",
+                "Edit Category",
                 "Edit All Fields");
 
             if (action == "Cancel" || string.IsNullOrEmpty(action))
@@ -118,6 +175,9 @@ namespace FreshCart.ViewModels
                     break;
                 case "Edit Stock":
                     await UpdateProductStock(product);
+                    break;
+                case "Edit Category":
+                    await UpdateProductCategory(product);
                     break;
                 case "Edit All Fields":
                     await UpdateAllFields(product);
@@ -149,7 +209,7 @@ namespace FreshCart.ViewModels
         {
             string newPriceStr = await Application.Current.MainPage.DisplayPromptAsync(
                 "Update Price",
-                $"Product: {product.Name}\nCurrent price: ${product.Price:F2}\nEnter new price:",
+                $"Product: {product.Name}\nCurrent price: ₱{product.Price:F2}\nEnter new price:",
                 "Update",
                 "Cancel",
                 product.Price.ToString("F2"),
@@ -159,7 +219,7 @@ namespace FreshCart.ViewModels
             {
                 product.Price = newPrice;
                 await Application.Current.MainPage.DisplayAlert("Success",
-                    $"Price updated to: ${newPrice:F2}", "OK");
+                    $"Price updated to: ₱{newPrice:F2}", "OK");
             }
         }
 
@@ -181,66 +241,68 @@ namespace FreshCart.ViewModels
             }
         }
 
+        private async Task UpdateProductCategory(Product product)
+        {
+            string selectedCategory = await Application.Current.MainPage.DisplayActionSheet(
+                $"Update Category for {product.Name}\nCurrent: {product.Category}",
+                "Cancel",
+                null,
+                DataService.Categories.ToArray());
+
+            if (selectedCategory != "Cancel" && !string.IsNullOrEmpty(selectedCategory))
+            {
+                product.Category = selectedCategory;
+                await Application.Current.MainPage.DisplayAlert("Success",
+                    $"Category updated to: {selectedCategory}", "OK");
+            }
+        }
+
         private async Task UpdateAllFields(Product product)
         {
             string newName = await Application.Current.MainPage.DisplayPromptAsync(
-                "Update Product - Step 1/3",
+                "Update Product - Step 1/4",
                 $"Current name: {product.Name}\nEnter new name:",
                 "Next",
                 "Cancel",
                 product.Name);
-
             if (newName == null) return;
 
+            string selectedCategory = await Application.Current.MainPage.DisplayActionSheet(
+                "Update Product - Step 2/4\nSelect Category",
+                "Cancel",
+                null,
+                DataService.Categories.ToArray());
+            if (selectedCategory == "Cancel" || selectedCategory == null) return;
+
             string newPriceStr = await Application.Current.MainPage.DisplayPromptAsync(
-                "Update Product - Step 2/3",
-                $"Current price: ${product.Price:F2}\nEnter new price:",
+                "Update Product - Step 3/4",
+                $"Current price: ₱{product.Price:F2}\nEnter new price:",
                 "Next",
                 "Cancel",
                 product.Price.ToString("F2"),
                 keyboard: Keyboard.Numeric);
-
             if (newPriceStr == null) return;
 
             string newStockStr = await Application.Current.MainPage.DisplayPromptAsync(
-                "Update Product - Step 3/3",
+                "Update Product - Step 4/4",
                 $"Current stock: {product.StockQuantity}\nEnter new stock:",
                 "Update",
                 "Cancel",
                 product.StockQuantity.ToString(),
                 keyboard: Keyboard.Numeric);
-
             if (newStockStr == null) return;
 
             if (!string.IsNullOrWhiteSpace(newName))
                 product.Name = newName;
-
+            if (!string.IsNullOrWhiteSpace(selectedCategory))
+                product.Category = selectedCategory;
             if (decimal.TryParse(newPriceStr, out decimal newPrice) && newPrice >= 0)
                 product.Price = newPrice;
-
             if (int.TryParse(newStockStr, out int newStock) && newStock >= 0)
                 product.StockQuantity = newStock;
 
             await Application.Current.MainPage.DisplayAlert("Success",
                 "All product details updated successfully!", "OK");
-        }
-
-        private async void OnDeleteProduct(Product product)
-        {
-            bool confirm = await Application.Current.MainPage.DisplayAlert(
-                "Delete Product",
-                $"Are you sure you want to delete '{product.Name}'?\nThis action cannot be undone.",
-                "Delete",
-                "Cancel");
-
-            if (confirm)
-            {
-                DataService.Products.Remove(product);
-                FilterProducts();
-                OnPropertyChanged(nameof(Products));
-                await Application.Current.MainPage.DisplayAlert("Deleted",
-                    $"{product.Name} has been deleted", "OK");
-            }
         }
 
         private async void OnUpdateStatus(Order order)
@@ -266,13 +328,9 @@ namespace FreshCart.ViewModels
                 _ => order.Status
             };
 
-            // Update the status - this now triggers PropertyChanged on the Order object
             DataService.UpdateOrderStatus(order.OrderNumber, newStatus);
-
-            // Force refresh the UI
             OnPropertyChanged(nameof(Orders));
 
-            // Additional refresh to ensure all bound properties update
             var index = DataService.Orders.IndexOf(order);
             if (index >= 0)
             {
@@ -313,7 +371,8 @@ namespace FreshCart.ViewModels
                 Id = DataService.Products.Any() ? DataService.Products.Max(p => p.Id) + 1 : 1,
                 Name = NewProductName,
                 Price = price,
-                StockQuantity = stock
+                StockQuantity = stock,
+                Category = string.IsNullOrWhiteSpace(NewProductCategory) ? "N/A" : NewProductCategory
             };
 
             DataService.Products.Add(newProduct);
@@ -322,18 +381,81 @@ namespace FreshCart.ViewModels
             NewProductName = string.Empty;
             NewProductPrice = string.Empty;
             NewProductStock = string.Empty;
+            NewProductCategory = string.Empty;
+            OnPropertyChanged(nameof(NewProductName));
+            OnPropertyChanged(nameof(NewProductPrice));
+            OnPropertyChanged(nameof(NewProductStock));
+            OnPropertyChanged(nameof(NewProductCategory));
 
             Application.Current.MainPage.DisplayAlert("Success",
                 $"Product '{newProduct.Name}' added successfully!", "OK");
         }
 
+        private void OnAddCategory()
+        {
+            if (string.IsNullOrWhiteSpace(NewCategoryName))
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Enter category name", "OK");
+                return;
+            }
+
+            if (DataService.Categories.Contains(NewCategoryName))
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Category already exists", "OK");
+                return;
+            }
+
+            DataService.Categories.Add(NewCategoryName);
+            Categories = new ObservableCollection<string>(DataService.Categories);
+            NewCategoryName = string.Empty;
+            OnPropertyChanged(nameof(NewCategoryName));
+            Application.Current.MainPage.DisplayAlert("Success", "Category added!", "OK");
+        }
+
+        private async void OnEditCategory(string category)
+        {
+            string newName = await Application.Current.MainPage.DisplayPromptAsync(
+                "Edit Category", "Enter new name:", "Save", "Cancel", category);
+
+            if (!string.IsNullOrWhiteSpace(newName) && newName != category)
+            {
+                var index = DataService.Categories.IndexOf(category);
+                if (index >= 0)
+                {
+                    foreach (var product in DataService.Products.Where(p => p.Category == category))
+                    {
+                        product.Category = newName;
+                    }
+                    DataService.Categories[index] = newName;
+                    Categories = new ObservableCollection<string>(DataService.Categories);
+                    FilterProducts();
+                }
+            }
+        }
+
+        private async void OnDeleteCategory(string category)
+        {
+            bool confirm = await Application.Current.MainPage.DisplayAlert(
+                "Delete Category",
+                $"Delete '{category}'? Products will become 'N/A'.",
+                "Delete", "Cancel");
+
+            if (confirm)
+            {
+                DataService.Categories.Remove(category);
+                foreach (var product in DataService.Products.Where(p => p.Category == category))
+                {
+                    product.Category = "N/A";
+                }
+                Categories = new ObservableCollection<string>(DataService.Categories);
+                FilterProducts();
+            }
+        }
+
         private async Task OnLogout()
         {
             bool confirm = await Application.Current.MainPage.DisplayAlert(
-                "Logout",
-                "Are you sure you want to logout?",
-                "Yes",
-                "No");
+                "Logout", "Are you sure you want to logout?", "Yes", "No");
 
             if (confirm)
             {

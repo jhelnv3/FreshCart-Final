@@ -3,24 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\FreshCart\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\staffpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\staffpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\statusviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\statusviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\statuspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\statuspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\statuspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\staffpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\staffpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\staffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\staffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\productdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\productdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\staffviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\staffviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\statuspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\statuspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\cartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -55,52 +95,12 @@
       "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\productdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\productdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\views\\staffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\views\\staffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\statusviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\statusviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\staffviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\staffviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\viewmodels\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|solutionrelative:freshcart\\viewmodels\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D1125F-77FF-8145-069E-43D877F907EB}|FreshCart\\FreshCart.csproj|c:\\users\\user\\source\\repos\\freshcart\\freshcart\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -165,7 +165,176 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StaffPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml.cs",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\StaffPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml.cs",
+              "RelativeToolTip": "FreshCart\\Views\\StaffPage.xaml.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAqwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:32:25.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\UserPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml",
+              "RelativeToolTip": "FreshCart\\Views\\UserPage.xaml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAqwD4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T08:24:25.587Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ProductDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\ProductDisplay.cs",
+              "RelativeDocumentMoniker": "FreshCart\\Models\\ProductDisplay.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\ProductDisplay.cs",
+              "RelativeToolTip": "FreshCart\\Models\\ProductDisplay.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAuwCUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T09:04:53.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatusPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StatusPage.xaml",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\StatusPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StatusPage.xaml",
+              "RelativeToolTip": "FreshCart\\Views\\StatusPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T08:24:47.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StaffPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\StaffPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml",
+              "RelativeToolTip": "FreshCart\\Views\\StaffPage.xaml",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAAAJcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T08:25:26.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml.cs",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\UserPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml.cs",
+              "RelativeToolTip": "FreshCart\\Views\\UserPage.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:29:55.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatusViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StatusViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\StatusViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StatusViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\StatusViewModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAswB4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:26:05.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\UserViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\UserViewModel.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAAAPoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:25:52.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:25:45.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StaffViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StaffViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\StaffViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StaffViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\StaffViewModel.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAIA3wGcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:26:17.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HistoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\HistoryViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\HistoryViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\HistoryViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\HistoryViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:26:11.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CartViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\CartViewModel.cs",
+              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\CartViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\CartViewModel.cs",
+              "RelativeToolTip": "FreshCart\\ViewModels\\CartViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:25:59.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Services\\DataService.cs",
+              "RelativeDocumentMoniker": "FreshCart\\Services\\DataService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Services\\DataService.cs",
+              "RelativeToolTip": "FreshCart\\Services\\DataService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:23:52.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "FreshCart\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\Product.cs",
+              "RelativeToolTip": "FreshCart\\Models\\Product.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T08:23:14.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "CartPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\CartPage.xaml.cs",
               "RelativeDocumentMoniker": "FreshCart\\Views\\CartPage.xaml.cs",
@@ -177,46 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CartPage.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\CartPage.xaml",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\CartPage.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\CartPage.xaml",
-              "RelativeToolTip": "FreshCart\\Views\\CartPage.xaml",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAIwIUAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T08:24:36.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml.cs",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\UserPage.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml.cs",
-              "RelativeToolTip": "FreshCart\\Views\\UserPage.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:29:55.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserPage.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\UserPage.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\UserPage.xaml",
-              "RelativeToolTip": "FreshCart\\Views\\UserPage.xaml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAL0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T08:24:25.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "StatusPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StatusPage.xaml.cs",
               "RelativeDocumentMoniker": "FreshCart\\Views\\StatusPage.xaml.cs",
@@ -224,38 +354,23 @@
               "RelativeToolTip": "FreshCart\\Views\\StatusPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:30:47.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T08:30:47.682Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StatusPage.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StatusPage.xaml",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\StatusPage.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StatusPage.xaml",
-              "RelativeToolTip": "FreshCart\\Views\\StatusPage.xaml",
-              "ViewState": "AgIAADUBAAAAAAAAAAAAAEcBAAAOAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "CartPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\CartPage.xaml",
+              "RelativeDocumentMoniker": "FreshCart\\Views\\CartPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\CartPage.xaml",
+              "RelativeToolTip": "FreshCart\\Views\\CartPage.xaml",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAIwIUAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T08:24:47.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T08:24:36.736Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StaffPage.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\StaffPage.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml",
-              "RelativeToolTip": "FreshCart\\Views\\StaffPage.xaml",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAhwPMAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-24T08:25:26.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "StringToBoolConverter.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Converters\\StringToBoolConverter.cs",
               "RelativeDocumentMoniker": "FreshCart\\Converters\\StringToBoolConverter.cs",
@@ -267,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "StatusToColorConverter.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Converters\\StatusToColorConverter.cs",
               "RelativeDocumentMoniker": "FreshCart\\Converters\\StatusToColorConverter.cs",
@@ -279,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "StatusToVisibilityConverter.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Converters\\StatusToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "FreshCart\\Converters\\StatusToVisibilityConverter.cs",
@@ -291,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "StatusStepConverter.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Converters\\StatusStepConverter.cs",
               "RelativeDocumentMoniker": "FreshCart\\Converters\\StatusStepConverter.cs",
@@ -303,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "IsNotNullConverter.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Converters\\IsNotNullConverter.cs",
               "RelativeDocumentMoniker": "FreshCart\\Converters\\IsNotNullConverter.cs",
@@ -315,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\User.cs",
               "RelativeDocumentMoniker": "FreshCart\\Models\\User.cs",
@@ -327,31 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProductDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\ProductDisplay.cs",
-              "RelativeDocumentMoniker": "FreshCart\\Models\\ProductDisplay.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\ProductDisplay.cs",
-              "RelativeToolTip": "FreshCart\\Models\\ProductDisplay.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAswDwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T09:04:53.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "FreshCart\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\Product.cs",
-              "RelativeToolTip": "FreshCart\\Models\\Product.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwBEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:23:14.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\Order.cs",
               "RelativeDocumentMoniker": "FreshCart\\Models\\Order.cs",
@@ -363,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 24,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "FreshCart\\Models\\CartItem.cs",
@@ -372,102 +463,6 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T08:23:22.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DataService.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Services\\DataService.cs",
-              "RelativeDocumentMoniker": "FreshCart\\Services\\DataService.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Services\\DataService.cs",
-              "RelativeToolTip": "FreshCart\\Services\\DataService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:23:52.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CartViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\CartViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\CartViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\CartViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\CartViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:25:59.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "StaffPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml.cs",
-              "RelativeDocumentMoniker": "FreshCart\\Views\\StaffPage.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\Views\\StaffPage.xaml.cs",
-              "RelativeToolTip": "FreshCart\\Views\\StaffPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:32:25.634Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\UserViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\UserViewModel.cs",
-              "ViewState": "AgIAAMoAAAAAAAAAAAAkwNMAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:25:52.956Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "StatusViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StatusViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\StatusViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StatusViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\StatusViewModel.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA3wEwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:26:05.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "StaffViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StaffViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\StaffViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\StaffViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\StaffViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:26:17.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAAD4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:25:45.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "HistoryViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\HistoryViewModel.cs",
-              "RelativeDocumentMoniker": "FreshCart\\ViewModels\\HistoryViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\FreshCart\\FreshCart\\ViewModels\\HistoryViewModel.cs",
-              "RelativeToolTip": "FreshCart\\ViewModels\\HistoryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T08:26:11.402Z"
             },
             {
               "$type": "Document",

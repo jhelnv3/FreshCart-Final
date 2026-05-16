@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using FreshCart.Models;
+﻿using FreshCart.Models;
 using FreshCart.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -34,7 +28,7 @@ namespace FreshCart.ViewModels
                 "Confirm Receipt",
                 $"Have you received all items in Order {order.OrderNumber}?\n\n" +
                 $"Products: {order.Items.Count}\n" +
-                $"Total Amount: ${order.TotalAmount:F2}\n\n" +
+                $"Total Amount: ₱{order.TotalAmount:F2}\n\n" +
                 "This action cannot be undone.",
                 "Yes, I received it!",
                 "Not yet");

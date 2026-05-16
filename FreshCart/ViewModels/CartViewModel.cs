@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using FreshCart.Models;
+﻿using FreshCart.Models;
 using FreshCart.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

@@ -948,3 +948,4 @@ C:\Users\user\source\repos\FreshCart\FreshCart\obj\Debug\net9.0-android\stamp\_C
 C:\Users\user\source\repos\FreshCart\FreshCart\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\user\source\repos\FreshCart\FreshCart\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\user\source\repos\FreshCart\FreshCart\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\user\source\repos\FreshCart\FreshCart\obj\Debug\net9.0-android\FreshCart.sourcelink.json
